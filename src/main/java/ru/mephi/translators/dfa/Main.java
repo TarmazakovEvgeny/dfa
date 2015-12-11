@@ -40,16 +40,11 @@ public class Main {
 //        a b c d ... — алфавит
 //        A B a — правила
 
-
+        System.out.println("Данная программа детерминирует автомат." + '\n'
+                         + "Для продолжения, следуйте инструкциям ->");
         readDataFromConsole(stateList, finalStateList, alphabetList, ruleList);
-        //initTestData();
+//        initTestData(); //заполение тестовыми данными
 
-//        for (String state : stateList) {
-//            for (String alph : alphabetList) {
-//                dkaStateList.add(getDkaStateFromRule(ruleList, state, alph));
-//                stateList.add("V");
-//            }
-//        }
 
         DkaState dkaSt = new DkaState();
         dkaSt.setName("A");
@@ -83,8 +78,9 @@ public class Main {
             }
         }
         makeDkaStatesFinish();
+        System.out.println("DkaState - новое состояние в которое входят старые states," + '\n'
+                + " если параметр finished = true, следовательно состояние конечное.");
         printResult();
-        System.out.println("Hello, world");
     }
 
     private static DkaState getDkaStateFromRule(ArrayList<Rule> ruleList, String state, String alph) {
@@ -170,14 +166,16 @@ public class Main {
 
 
         System.out.print("Введите состояния: ");
-        sc = new Scanner(System.in);
+       // sc = new Scanner(System.in);
+        sc.nextLine();
         String states = sc.nextLine();
         for (String s : states.split(" ")) {
             stateList.add(s);
         }
 
         System.out.print("Введите конечные состояния: ");
-        sc = new Scanner(System.in);
+        //sc = new Scanner(System.in);
+
         states = sc.nextLine();
         for (String s : states.split(" ")) {
             finalStateList.add(s);
@@ -187,15 +185,17 @@ public class Main {
         startSymbol = sc.next();
 
         System.out.print("Введите алфавит: ");
-        sc = new Scanner(System.in);
+        //sc = new Scanner(System.in);
+        sc.nextLine();
         states = sc.nextLine();
         for (String s : states.split(" ")) {
             alphabet.add(s);
         }
 
         System.out.println("Введите правила: ");
+
         for (int i = 0; i < l; i++) {
-            sc = new Scanner(System.in);
+            //sc = new Scanner(System.in);6
             states = sc.nextLine();
             Rule rule = new Rule();
             ArrayList<String> arr = new ArrayList<String>();

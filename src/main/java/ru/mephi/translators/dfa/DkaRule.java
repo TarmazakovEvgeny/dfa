@@ -18,11 +18,7 @@ public class DkaRule {
 
     @Override
     public String toString() {
-        return "DkaRule{" +
-                "from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", on='" + on + '\'' +
-                '}';
+        return from + " -" + on + "-> " + to;
     }
 
     public String getFrom() {
